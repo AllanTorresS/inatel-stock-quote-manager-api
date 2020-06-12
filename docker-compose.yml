@@ -1,0 +1,36 @@
+version: "3"
+services:
+  acert-database:
+    image: postgres:9.6
+    restart: always
+    container_name: "acert-database"
+    environment:
+      - POSTGRES_USER=acert
+      - POSTGRES_PASSWORD=1914
+      - POSTGRES_DB=celsius-fahrenheit
+      - TZ=GMT
+    volumes:
+      - "./data/postgres:/var/lib/postgresql/data"
+    ports:
+      - 5433:5432
+    networks:
+      - acert-network
+
+  acert-api:
+    build: .
+    container_name: "acert-api"
+    env_file:
+      - docker-compose.env
+    ports:
+      - 8082:8080
+    networks:
+      - acert-network
+    depends_on:
+      - acert-database
+
+networks:
+  acert-network:
+    driver: bridge
+
+
+
