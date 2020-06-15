@@ -2,10 +2,8 @@ package br.com.grupo.acert.model.entitys;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "historico_conversao")
@@ -15,7 +13,7 @@ public class ConverterHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "historico_gerador_sequence")
-    @SequenceGenerator(name = "historico_gerador_sequence",sequenceName = "historico_id_seq")
+    @SequenceGenerator(name = "historico_gerador_sequence", sequenceName = "historico_id_seq", allocationSize = 1)
     @EqualsAndHashCode.Include
     private Integer id;
 

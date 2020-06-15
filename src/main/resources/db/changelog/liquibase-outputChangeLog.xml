@@ -1,38 +1,19 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
-    <changeSet author="allan (generated)" id="1592052905315-1">
-        <createTable tableName="test_history">
-            <column name="id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="test_history_pkey"/>
-            </column>
-            <column name="nome" type="VARCHAR(255)"/>
-        </createTable>
-    </changeSet>
-    <changeSet author="allan (generated)" id="1592052905315-2">
-        <createTable tableName="conversion_history">
-            <column autoIncrement="true" name="id" type="SERIAL">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="conversion_history_pkey"/>
-            </column>
-            <column name="nome" type="VARCHAR(255)"/>
-        </createTable>
-    </changeSet>
-    <changeSet author="allan (generated)" id="1592052905315-3">
+    <changeSet author="allan (generated)" id="1592189009732-1">
         <createTable tableName="historico_conversao">
             <column name="id" type="INTEGER">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="historico_conversao_pkey"/>
             </column>
-            <column name="fahrenheit" type="FLOAT8"/>
-            <column name="celsius" type="FLOAT8"/>
-            <column name="data_conversao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fahrenheit_valor" type="FLOAT8"/>
+            <column name="celsius_valor" type="FLOAT8"/>
+            <column name="data_conversao" type="VARCHAR(255)"/>
             <column name="ip_solicitante" type="VARCHAR(255)"/>
             <column name="is_fahrenheit_para_celsius" type="BOOLEAN"/>
-            <column name="valor_conversao" type="FLOAT8"/>
+            <column name="resultado_conversao" type="FLOAT8"/>
         </createTable>
     </changeSet>
-    <changeSet author="allan (generated)" id="1592052905315-4">
-        <createSequence sequenceName="hibernate_sequence"/>
-    </changeSet>
-    <changeSet author="allan (generated)" id="1592052905315-5">
-        <createSequence sequenceName="historico_sequence_id"/>
+    <changeSet author="allan (generated)" id="1592189009732-2">
+        <createSequence sequenceName="historico_id_seq"/>
     </changeSet>
 </databaseChangeLog>
