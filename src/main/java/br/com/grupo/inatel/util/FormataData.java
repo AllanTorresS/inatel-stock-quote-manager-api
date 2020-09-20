@@ -1,4 +1,4 @@
-package br.com.grupo.acert.util;
+package br.com.grupo.inatel.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

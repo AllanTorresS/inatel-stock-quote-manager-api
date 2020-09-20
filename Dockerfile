@@ -9,5 +9,4 @@ RUN mvn -f pom.xml clean package -Dmaven.test.skip=true
 ### STAGE 2: Run ###
 FROM openjdk:8-alpine
 COPY --from=build /workspace/target/*.jar app.jar
-EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]

@@ -1,4 +1,4 @@
-package br.com.grupo.acert.model.error;
+package br.com.grupo.inatel.model.error;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package br.com.grupo.acert;
+package br.com.grupo.inatel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,35 +1,33 @@
 version: "3"
 services:
-  acert-database:
-    image: postgres:9.6
+  inatel-database:
+    image: mysql:8
     restart: always
-    container_name: "acert-database"
+    container_name: "inatel-database"
     environment:
-      - POSTGRES_USER=acert
-      - POSTGRES_PASSWORD=1914
-      - POSTGRES_DB=celsius-fahrenheit
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb
       - TZ=GMT
-    volumes:
-      - "./data/postgres:/var/lib/postgresql/data"
     ports:
-      - 5433:5432
+      - 3306:3306
+      - 33060:33060
     networks:
-      - acert-network
+      - inatel-network
 
   acert-api:
     build: .
-    container_name: "acert-api"
+    container_name: "inatel-api"
     env_file:
       - docker-compose.env
     ports:
-      - 8082:8080
+      - 8081:8081
     networks:
-      - acert-network
+      - inatel-network
     depends_on:
-      - acert-database
+      - inatel-database
 
 networks:
-  acert-network:
+  inatel-network:
     driver: bridge
 
 

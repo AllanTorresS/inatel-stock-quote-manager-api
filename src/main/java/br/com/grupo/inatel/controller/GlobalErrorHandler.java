@@ -1,9 +1,9 @@
-package br.com.grupo.acert.controller;
+package br.com.grupo.inatel.controller;
 
-import br.com.grupo.acert.model.error.AcertErrorResponse;
-import br.com.grupo.acert.model.error.AcertInternalServerErrorExeception;
-import br.com.grupo.acert.model.error.AcertNotFoundExeception;
-import br.com.grupo.acert.util.FormataData;
+import br.com.grupo.inatel.model.error.AcertErrorResponse;
+import br.com.grupo.inatel.model.error.AcertInternalServerErrorExeception;
+import br.com.grupo.inatel.model.error.AcertNotFoundExeception;
+import br.com.grupo.inatel.util.FormataData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;
