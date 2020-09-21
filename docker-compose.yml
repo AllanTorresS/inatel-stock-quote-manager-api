@@ -1,9 +1,9 @@
 version: "3"
 services:
-  inatel-database:
+  inatel-quotes-database:
     image: mysql:8
     restart: always
-    container_name: "inatel-database"
+    container_name: "inatel-quotes-database"
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bootdb
@@ -12,23 +12,23 @@ services:
       - 3306:3306
       - 33060:33060
     networks:
-      - inatel-network
+      - inatel-quortes-network
 
-  acert-api:
+  inatel-quotes-api:
     build: .
-    container_name: "inatel-api"
+    container_name: "inatel-quotes-api"
     env_file:
       - docker-compose.env
     ports:
       - 8081:8081
     networks:
-      - inatel-network
+      - inatel-quortes-network
     depends_on:
-      - inatel-database
+      - inatel-quotes-database
 
 networks:
-  inatel-network:
-    driver: bridge
+  inatel-quortes-network:
+   driver: bridge
 
 
 

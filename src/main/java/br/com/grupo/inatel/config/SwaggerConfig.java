@@ -31,8 +31,8 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "Conversor celsius/fahrenheit API REST",
-                "API REST que converte graus de celsius em fahrenheit e vice versa.",
+                "API Stock Quote Manager",
+                "API REST que armazena os dados valor da cotação por dia.",
                 "1.0",
                 "Terms of Service",
                 new Contact("Allan Torres", "https://github.com/AllanTorresS", "allanflfsi@gmail.com"),

@@ -10,10 +10,10 @@ import java.util.Date;
 import java.util.Map;
 
 @Entity
-@Table(name = "history")
+@Table(name = "quotes_history")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class History {
+public class QuotesHistory {
 
     @Id
     @EqualsAndHashCode.Include
